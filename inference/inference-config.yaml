@@ -1,0 +1,9 @@
+model_config_path: ./model-config.json
+output_root: ../results/inference-results
+eval_data_root_dir: ../results/evaluate-results/FinMMR
+max_no_improve_round_count: 8
+
+rpm: 60
+batch_size: 10
+model_name: gemini-2.0-flash
+qa_file_path: ../data/easy_validation_cot.json

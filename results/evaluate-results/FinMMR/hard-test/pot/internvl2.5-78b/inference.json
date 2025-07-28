@@ -1,0 +1,526 @@
+[
+  {
+    "question_id": "hard-test-0",
+    "question": "请根据图中数据，计算2024年第三季度净利润与2023年第三季度净利润的差值，并将该差值除以2023年第三季度净利润，得到的增长率保留两位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    net_profit_2023_q3 = 88.5  # 2023年第三季度净利润\n    net_profit_2024_q3 = 107.0  # 2024年第三季度净利润\n\n    # Do math calculation to get the answer\n    difference = net_profit_2024_q3 - net_profit_2023_q3\n    growth_rate = (difference / net_profit_2023_q3) * 100\n\n    # return answer\n    return round(growth_rate, 2)\n```\n\nThis program calculates the growth rate of the net profit from the third quarter of 2023 to the third quarter of 2024, based on the data provided in the image. The growth rate is calculated by finding the difference between the net profits of the two quarters, dividing that difference by the net profit of the third quarter of 2023, and then multiplying by 100 to get the percentage. The result is rounded to two decimal places.",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-0",
+      "question": "请根据图中数据，计算2024年第三季度净利润与2023年第三季度净利润的差值，并将该差值除以2023年第三季度净利润，得到的增长率保留两位小数。",
+      "image_id": "strategy_05_05_18_figure_1",
+      "source": "CRRQA",
+      "source_id": "CRRQA-strategy-2996",
+      "subfield": "strategy",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 3
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 2,
+            "*": 1,
+            "/": 1,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 4
+        },
+        "code_statistics": {
+          "lines": 7,
+          "parentheses": 2
+        }
+      },
+      "difficulty": 3.465735902799726,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2791-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2791-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2791-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2791-1.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请根据图中数据，计算2024年第三季度净利润与2023年第三季度净利润的差值，并将该差值除以2023年第三季度净利润，得到的增长率保留两位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"SuYw1a98GBZDMSFl1WY9lIpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    net_profit_2023_q3 = 88.5  # 2023年第三季度净利润\\n    net_profit_2024_q3 = 107.0  # 2024年第三季度净利润\\n\\n    # Do math calculation to get the answer\\n    difference = net_profit_2024_q3 - net_profit_2023_q3\\n    growth_rate = (difference / net_profit_2023_q3) * 100\\n\\n    # return answer\\n    return round(growth_rate, 2)\\n```\\n\\nThis program calculates the growth rate of the net profit from the third quarter of 2023 to the third quarter of 2024, based on the data provided in the image. The growth rate is calculated by finding the difference between the net profits of the two quarters, dividing that difference by the net profit of the third quarter of 2023, and then multiplying by 100 to get the percentage. The result is rounded to two decimal places.\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844938,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-1",
+    "question": "Three months ago, a supervisor initiated a receive-fixed and pay-equity swap. The annualized fixed interest is 3% and the equity index was at 100 at the time of the swap. The expiry of the swap is one year with a quarterly reset, and the nominal amount is valued at $100 million. The present spot rates are as stated: At what equity index level would this equity swap value stand at zero? Answer to three decimal places.",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    fixed_interest_rate = 0.03\n    initial_equity_index = 100\n    nominal_amount = 10000000  # $100 million\n    present_value_factors = [0.997506, 0.992556, 0.985222, 0.97561]\n    quarterly_interest = fixed_interest_rate / 4\n    \n    # Calculate the present value of fixed payments\n    fixed_payments_pv = sum(quarterly_interest * nominal_amount * factor for factor in present_value_factors)\n    \n    # Calculate the present value of floating payments\n    # Let x be the equity index level at which the swap value is zero\n    # Then the present value of floating payments = (x / 100) * nominal_amount * sum(present_value_factors)\n    floating_payments_pv = (sum(present_value_factors) * nominal_amount)\n    \n    # Set the present value of fixed payments equal to the present value of floating payments\n    # fixed_payments_pv = (x / 100) * floating_payments_pv\n    # Solve for x\n    x = (fixed_payments_pv * 100) / floating_payments_pv\n    \n    # return answer\n    return round(x, 3)\n\n# Call the function and print the answer\nanswer = solution()\nprint(answer)\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-1",
+      "question": "Three months ago, a supervisor initiated a receive-fixed and pay-equity swap. The annualized fixed interest is 3% and the equity index was at 100 at the time of the swap. The expiry of the swap is one year with a quarterly reset, and the nominal amount is valued at $100 million. The present spot rates are as stated: At what equity index level would this equity swap value stand at zero? Answer to three decimal places.",
+      "topic": "Asset Classes & Derivatives",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 5
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 1,
+            "-": 1,
+            "*": 5,
+            "/": 2,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 9
+        },
+        "code_statistics": {
+          "lines": 8,
+          "parentheses": 6
+        }
+      },
+      "difficulty": 4.595119850134591,
+      "source_id": "validation-92",
+      "img_type": "['Tables']",
+      "source": "FinanceMath",
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/326-1.jpg"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "English",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: Three months ago, a supervisor initiated a receive-fixed and pay-equity swap. The annualized fixed interest is 3% and the equity index was at 100 at the time of the swap. The expiry of the swap is one year with a quarterly reset, and the nominal amount is valued at $100 million. The present spot rates are as stated: At what equity index level would this equity swap value stand at zero? Answer to three decimal places.\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n",
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/326-1.jpg"
+      ]
+    },
+    "model_raw_response": "{\"id\":\"ZMIR04GFW38xosATH1nTMIpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    fixed_interest_rate = 0.03\\n    initial_equity_index = 100\\n    nominal_amount = 10000000  # $100 million\\n    present_value_factors = [0.997506, 0.992556, 0.985222, 0.97561]\\n    quarterly_interest = fixed_interest_rate / 4\\n    \\n    # Calculate the present value of fixed payments\\n    fixed_payments_pv = sum(quarterly_interest * nominal_amount * factor for factor in present_value_factors)\\n    \\n    # Calculate the present value of floating payments\\n    # Let x be the equity index level at which the swap value is zero\\n    # Then the present value of floating payments = (x / 100) * nominal_amount * sum(present_value_factors)\\n    floating_payments_pv = (sum(present_value_factors) * nominal_amount)\\n    \\n    # Set the present value of fixed payments equal to the present value of floating payments\\n    # fixed_payments_pv = (x / 100) * floating_payments_pv\\n    # Solve for x\\n    x = (fixed_payments_pv * 100) / floating_payments_pv\\n    \\n    # return answer\\n    return round(x, 3)\\n\\n# Call the function and print the answer\\nanswer = solution()\\nprint(answer)\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844932,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-2",
+    "question": "请计算2022年与2021年的第二项指标的差值，并将该差值除以2021年的第二项指标，得到的结果表示为百分比；请保留一位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    value_2021 = 22.56\n    value_2022 = 48.66\n    \n    # Do math calculation to get the answer\n    difference = value_2022 - value_2021\n    percentage_change = (difference / value_2021) * 100\n    \n    # return answer\n    return round(percentage_change, 1)\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-2",
+      "question": "请计算2022年与2021年的第二项指标的差值，并将该差值除以2021年的第二项指标，得到的结果表示为百分比；请保留一位小数。",
+      "image_id": "market_09_09_24_table_1",
+      "source": "CRRQA",
+      "source_id": "CRRQA-market-2793",
+      "subfield": "market",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 3
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 2,
+            "*": 1,
+            "/": 1,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 4
+        },
+        "code_statistics": {
+          "lines": 5,
+          "parentheses": 2
+        }
+      },
+      "difficulty": 3.1780538303479453,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3040-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3040-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3040-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3040-1.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请计算2022年与2021年的第二项指标的差值，并将该差值除以2021年的第二项指标，得到的结果表示为百分比；请保留一位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"E-wmP3BQ6aMRDphm8bhhLopPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    value_2021 = 22.56\\n    value_2022 = 48.66\\n    \\n    # Do math calculation to get the answer\\n    difference = value_2022 - value_2021\\n    percentage_change = (difference / value_2021) * 100\\n    \\n    # return answer\\n    return round(percentage_change, 1)\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844950,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-3",
+    "question": "What was the change in the Plant start-up costs between 2017 and 2018? Answer to the nearest integer.",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    plant_start_up_costs_2018 = 929\n    plant_start_up_costs_2017 = 427\n    \n    # Do math calculation to get the answer\n    change_in_plant_start_up_costs = plant_start_up_costs_2018 - plant_start_up_costs_2017\n    \n    # return answer\n    return round(change_in_plant_start_up_costs)\n\n# Call the solution function and print the result\nprint(solution())\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question": "What was the change in the Plant start-up costs between 2017 and 2018? Answer to the nearest integer.",
+      "answer": "502",
+      "program": "plant_startup_2018 = df[\"Non-GAAP adjustments: -- Plant start-up costs (2)\"][\"2018\"]\nplant_startup_2017 = df[\"Non-GAAP adjustments: -- Plant start-up costs (2)\"][\"2017\"]\nanswer = plant_startup_2018 - plant_startup_2017",
+      "statistics": {
+        "number_statistics": {
+          "question_numbers": 2,
+          "context_numbers": 58,
+          "total_numbers": 60
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 5,
+            "*": 0,
+            "/": 0,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 5
+        },
+        "code_statistics": {
+          "lines": 3,
+          "parentheses": 4
+        }
+      },
+      "difficulty": 3.2188758248682006,
+      "question_id": "hard-test-3",
+      "source_id": "test-233",
+      "img_type": "['Tables']",
+      "source": "CodeTAT-QA",
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/597-1.jpg"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "English",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: What was the change in the Plant start-up costs between 2017 and 2018? Answer to the nearest integer.\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n",
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/597-1.jpg"
+      ]
+    },
+    "model_raw_response": "{\"id\":\"6V_0SR58BmrcgAMOxUTFRYpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    plant_start_up_costs_2018 = 929\\n    plant_start_up_costs_2017 = 427\\n    \\n    # Do math calculation to get the answer\\n    change_in_plant_start_up_costs = plant_start_up_costs_2018 - plant_start_up_costs_2017\\n    \\n    # return answer\\n    return round(change_in_plant_start_up_costs)\\n\\n# Call the solution function and print the result\\nprint(solution())\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844944,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-4",
+    "question": "What would be the average number of securities underlying options of those executive officers who receive them if Ms. Whiteley’s number of securities options is 109,026?",
+    "context": "\n<image 1>\n In 2018, we granted new equity awards to our named executive officers described in the table below. In determining the size and terms of these equity awards for Mses. Friar, Henry, Reses and Whiteley, our compensation committee, with input from our CEO, our then-current People Lead and Compensia, considered the past and expected future key contributions of each of these named executive officers, the extent to which their existing equity awards were vested and the competitive market data for similarly situated executives. Our compensation committee believed it was appropriate to grant each of them new equity awards to help achieve our retention goals and further align their compensation with the competitive market. (1) Ms. Friar resigned from her position as Chief Financial Officer, effective as of November 16, 2018. (2) One-twelfth of 10% of the shares subject to the option vest in equal monthly installments over one year from April 1, 2018, and one-thirty-sixth of 90% of the shares subject to the option vest in equal monthly installments over three years from April 1, 2019, subject to continued service with us. (3) 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (4) With respect to 16,695 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. And, with respect to 11,784 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from October 1, 2018, subject to continued service with us. (5) Messrs. Daswani and Murphy did not receive any additional equity awards in conjunction with their service as interim co-CFOs. Equity awards to Messrs. Daswani and Murphy were granted equity awards in April 2018, prior to their becoming named executive officers, as part of the company-wide compensation review program. Their grants were recommended by their direct manager, reviewed by the then-current People Lead and approved by our compensation committee. (6) With respect to 1,336 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 2,862 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (7) With respect to 1,527 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 3,435 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. Mr. Dorsey did not receive any equity awards in 2018 at his request, and because our compensation committee believed that his existing equity ownership position sufficiently aligned his interests with those of our stockholders.",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    ms_friar_options = 109026\n    ms_henry_options = 109026\n    ms_reses_options = 109026\n    ms_whiteley_options = 109026\n\n    # Calculate the total number of securities underlying options\n    total_options = ms_friar_options + ms_henry_options + ms_reses_options + ms_whiteley_options\n\n    # Calculate the average number of securities underlying options\n    average_options = total_options / 4\n\n    # Return the answer\n    return average_options\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question": "What would be the average number of securities underlying options of those executive officers who receive them if Ms. Whiteley’s number of securities options is 109,026?",
+      "question_id": "hard-test-4",
+      "source": "TAT-HQA",
+      "source_id": "compshort-testmini-64",
+      "img_type": "['Tables']",
+      "context": "\n<image 1>\n In 2018, we granted new equity awards to our named executive officers described in the table below. In determining the size and terms of these equity awards for Mses. Friar, Henry, Reses and Whiteley, our compensation committee, with input from our CEO, our then-current People Lead and Compensia, considered the past and expected future key contributions of each of these named executive officers, the extent to which their existing equity awards were vested and the competitive market data for similarly situated executives. Our compensation committee believed it was appropriate to grant each of them new equity awards to help achieve our retention goals and further align their compensation with the competitive market. (1) Ms. Friar resigned from her position as Chief Financial Officer, effective as of November 16, 2018. (2) One-twelfth of 10% of the shares subject to the option vest in equal monthly installments over one year from April 1, 2018, and one-thirty-sixth of 90% of the shares subject to the option vest in equal monthly installments over three years from April 1, 2019, subject to continued service with us. (3) 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (4) With respect to 16,695 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. And, with respect to 11,784 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from October 1, 2018, subject to continued service with us. (5) Messrs. Daswani and Murphy did not receive any additional equity awards in conjunction with their service as interim co-CFOs. Equity awards to Messrs. Daswani and Murphy were granted equity awards in April 2018, prior to their becoming named executive officers, as part of the company-wide compensation review program. Their grants were recommended by their direct manager, reviewed by the then-current People Lead and approved by our compensation committee. (6) With respect to 1,336 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 2,862 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (7) With respect to 1,527 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 3,435 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. Mr. Dorsey did not receive any equity awards in 2018 at his request, and because our compensation committee believed that his existing equity ownership position sufficiently aligned his interests with those of our stockholders.",
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/1803-1.png"
+      ],
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 1
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 3,
+            "-": 0,
+            "*": 0,
+            "/": 1,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 4
+        },
+        "code_statistics": {
+          "lines": 9,
+          "parentheses": 2
+        }
+      },
+      "difficulty": 3.6888794541139367,
+      "grade": "Hard",
+      "language": "English",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "The following question context is provided for your reference.\n<image 1>\n In 2018, we granted new equity awards to our named executive officers described in the table below. In determining the size and terms of these equity awards for Mses. Friar, Henry, Reses and Whiteley, our compensation committee, with input from our CEO, our then-current People Lead and Compensia, considered the past and expected future key contributions of each of these named executive officers, the extent to which their existing equity awards were vested and the competitive market data for similarly situated executives. Our compensation committee believed it was appropriate to grant each of them new equity awards to help achieve our retention goals and further align their compensation with the competitive market. (1) Ms. Friar resigned from her position as Chief Financial Officer, effective as of November 16, 2018. (2) One-twelfth of 10% of the shares subject to the option vest in equal monthly installments over one year from April 1, 2018, and one-thirty-sixth of 90% of the shares subject to the option vest in equal monthly installments over three years from April 1, 2019, subject to continued service with us. (3) 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (4) With respect to 16,695 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. And, with respect to 11,784 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from October 1, 2018, subject to continued service with us. (5) Messrs. Daswani and Murphy did not receive any additional equity awards in conjunction with their service as interim co-CFOs. Equity awards to Messrs. Daswani and Murphy were granted equity awards in April 2018, prior to their becoming named executive officers, as part of the company-wide compensation review program. Their grants were recommended by their direct manager, reviewed by the then-current People Lead and approved by our compensation committee. (6) With respect to 1,336 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 2,862 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. (7) With respect to 1,527 of the total RSAs, one-sixteenth of RSAs vest in 16 equal quarterly installments over four years from April 1, 2018, subject to continued service with us. And, with respect to 3,435 of the total RSAs, 2.5% of RSAs vest in four equal quarterly installments over one year from April 1, 2018, and 7.5% RSUs vest in 12 quarterly installments over three years from April 1, 2019, subject to continued service with us. Mr. Dorsey did not receive any equity awards in 2018 at his request, and because our compensation committee believed that his existing equity ownership position sufficiently aligned his interests with those of our stockholders.\n\nQuestion: What would be the average number of securities underlying options of those executive officers who receive them if Ms. Whiteley’s number of securities options is 109,026?\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n",
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/1803-1.png"
+      ]
+    },
+    "model_raw_response": "{\"id\":\"Pk-rtqEgAUD8mSOKiDQepIpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    ms_friar_options = 109026\\n    ms_henry_options = 109026\\n    ms_reses_options = 109026\\n    ms_whiteley_options = 109026\\n\\n    # Calculate the total number of securities underlying options\\n    total_options = ms_friar_options + ms_henry_options + ms_reses_options + ms_whiteley_options\\n\\n    # Calculate the average number of securities underlying options\\n    average_options = total_options / 4\\n\\n    # Return the answer\\n    return average_options\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844956,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-5",
+    "question": "请根据图中数据，计算韩国从2023年到2028年的预测复合年增长率（CAGR），并将其结果保留两位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    start_year = 2023\n    end_year = 2028\n    start_value = 27.06\n    end_value = 58.82\n    \n    # Do math calculation to get the answer\n    num_years = end_year - start_year\n    cagr = (end_value / start_value) ** (1/num_years) - 1\n    cagr_percentage = cagr * 100\n    \n    # return answer\n    return round(cagr_percentage, 2)\n\n# Test the solution\nprint(solution())\n```\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-5",
+      "question": "请根据图中数据，计算韩国从2023年到2028年的预测复合年增长率（CAGR），并将其结果保留两位小数。",
+      "image_id": "company_23_23_11_figure_2",
+      "source": "CRRQA",
+      "source_id": "CRRQA-company-973",
+      "subfield": "company",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 3
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 2,
+            "*": 0,
+            "/": 2,
+            "%": 0,
+            "**": 1
+          },
+          "total_operators": 5
+        },
+        "code_statistics": {
+          "lines": 5,
+          "parentheses": 8
+        }
+      },
+      "difficulty": 3.8066624897703196,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2461-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2461-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2461-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2461-3.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请根据图中数据，计算韩国从2023年到2028年的预测复合年增长率（CAGR），并将其结果保留两位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"qYDXxChurR9i1Z1ztVF3qopPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    start_year = 2023\\n    end_year = 2028\\n    start_value = 27.06\\n    end_value = 58.82\\n    \\n    # Do math calculation to get the answer\\n    num_years = end_year - start_year\\n    cagr = (end_value / start_value) ** (1/num_years) - 1\\n    cagr_percentage = cagr * 100\\n    \\n    # return answer\\n    return round(cagr_percentage, 2)\\n\\n# Test the solution\\nprint(solution())\\n```\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844941,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-6",
+    "question": "请根据图中数据，计算2024年到2026年锂精矿供给的平均增长率。请保留两位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    supply_2024 = 54\n    supply_2025 = 106\n    supply_2026 = 91\n    \n    # Calculate the average growth rate\n    growth_rate_2024_to_2025 = (supply_2025 - supply_2024) / supply_2024\n    growth_rate_2025_to_2026 = (supply_2026 - supply_2025) / supply_2025\n    \n    # Calculate the average growth rate over the three years\n    average_growth_rate = (growth_rate_2024_to_2025 + growth_rate_2025_to_2026) / 2\n    \n    # Convert to percentage and round to two decimal places\n    average_growth_rate_percent = round(average_growth_rate * 100, 2)\n    \n    # return answer\n    return average_growth_rate_percent\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-6",
+      "question": "请根据图中数据，计算2024年到2026年锂精矿供给的平均增长率。请保留两位小数。",
+      "image_id": "company_15_15_18_table_1",
+      "source": "CRRQA",
+      "source_id": "CRRQA-company-1934",
+      "subfield": "company",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 1
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 1,
+            "-": 2,
+            "*": 2,
+            "/": 3,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 8
+        },
+        "code_statistics": {
+          "lines": 7,
+          "parentheses": 8
+        }
+      },
+      "difficulty": 4.477336814478207,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2242-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2242-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2242-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/2242-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/2242-3.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请根据图中数据，计算2024年到2026年锂精矿供给的平均增长率。请保留两位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"rQ_NC5JqO9OCfj6kGpUGk4pPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    supply_2024 = 54\\n    supply_2025 = 106\\n    supply_2026 = 91\\n    \\n    # Calculate the average growth rate\\n    growth_rate_2024_to_2025 = (supply_2025 - supply_2024) / supply_2024\\n    growth_rate_2025_to_2026 = (supply_2026 - supply_2025) / supply_2025\\n    \\n    # Calculate the average growth rate over the three years\\n    average_growth_rate = (growth_rate_2024_to_2025 + growth_rate_2025_to_2026) / 2\\n    \\n    # Convert to percentage and round to two decimal places\\n    average_growth_rate_percent = round(average_growth_rate * 100, 2)\\n    \\n    # return answer\\n    return average_growth_rate_percent\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844953,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-7",
+    "question": "请根据图中数据，计算盈利能力下的资产周转率和毛利润率的RankIC之差，并将结果保留两位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    asset_turnover_rate = 0.21\n    gross_profit_rate = -0.16\n    \n    # Do math calculation to get the answer\n    difference = asset_turnover_rate - gross_profit_rate\n    \n    # return answer\n    return round(difference, 2)\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-7",
+      "question": "请根据图中数据，计算盈利能力下的资产周转率和毛利润率的RankIC之差，并将结果保留两位小数。",
+      "image_id": "market_09_09_31_table_1",
+      "source": "CRRQA",
+      "source_id": "CRRQA-market-2804",
+      "subfield": "market",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 3
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 3,
+            "*": 0,
+            "/": 0,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 3
+        },
+        "code_statistics": {
+          "lines": 7,
+          "parentheses": 2
+        }
+      },
+      "difficulty": 3.1780538303479453,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3043-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3043-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3043-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3043-1.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请根据图中数据，计算盈利能力下的资产周转率和毛利润率的RankIC之差，并将结果保留两位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"LAH87wWyvuOo1frbtKdUYIpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    asset_turnover_rate = 0.21\\n    gross_profit_rate = -0.16\\n    \\n    # Do math calculation to get the answer\\n    difference = asset_turnover_rate - gross_profit_rate\\n    \\n    # return answer\\n    return round(difference, 2)\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844935,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-8",
+    "question": "What's the average of Interest expense in 2009? (in thousand)",
+    "context": "Table 58 — Selected Quarterly Income Statement Data(1)\n<image 1>",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    interest_expense_third = 12131\n    interest_expense_second = 11983\n    interest_expense_first = 11701\n    \n    # Do math calculation to get the answer\n    average_interest_expense = (interest_expense_third + interest_expense_second + interest_expense_first) / 3\n    \n    # return answer\n    return average_interest_expense\n```",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question": "What's the average of Interest expense in 2009? (in thousand)",
+      "question_id": "hard-test-8",
+      "source": "MultiHiertt",
+      "source_id": "simplong-testmini-89",
+      "img_type": "['Tables']",
+      "context": "Table 58 — Selected Quarterly Income Statement Data(1)\n<image 1>",
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/1729-1.png"
+      ],
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 1
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 3,
+            "-": 0,
+            "*": 0,
+            "/": 1,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 4
+        },
+        "code_statistics": {
+          "lines": 9,
+          "parentheses": 2
+        }
+      },
+      "difficulty": 3.6888794541139367,
+      "grade": "Hard",
+      "language": "English",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "The following question context is provided for your reference.Table 58 — Selected Quarterly Income Statement Data(1)\n<image 1>\n\nQuestion: What's the average of Interest expense in 2009? (in thousand)\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n",
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/1729-1.png"
+      ]
+    },
+    "model_raw_response": "{\"id\":\"1a6jXwDflQikpq8KxzG-hopPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    interest_expense_third = 12131\\n    interest_expense_second = 11983\\n    interest_expense_first = 11701\\n    \\n    # Do math calculation to get the answer\\n    average_interest_expense = (interest_expense_third + interest_expense_second + interest_expense_first) / 3\\n    \\n    # return answer\\n    return average_interest_expense\\n```\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844947,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  },
+  {
+    "question_id": "hard-test-9",
+    "question": "请计算第3.0组2014年到2024年的平均年化超额，并保留两位小数。",
+    "context": "",
+    "output": "```python\ndef solution():\n    # Define variables name and value\n    group_3_0 = [-16.21, 34.32, 6.29, -7.80, 2.84, 6.17, -0.70, 25.04, 15.59, 15.25, 7.89, 7.66]\n    \n    # Do math calculation to get the answer\n    average_yearly_excess = sum(group_3_0) / len(group_3_0)\n    \n    # return answer\n    return round(average_yearly_excess, 2)\n```\n\nThis program calculates the average yearly excess for the 3.0 group from 2014 to 2024, and returns the result rounded to two decimal places. The values used are extracted from the provided image.",
+    "completion_tokens": 0,
+    "execution_outcome": {
+      "is_success": true
+    },
+    "original_data": {
+      "question_id": "hard-test-9",
+      "question": "请计算第3.0组2014年到2024年的平均年化超额，并保留两位小数。",
+      "image_id": "strategy_04_04_28_table_1",
+      "source": "CRRQA",
+      "source_id": "CRRQA-strategy-3098",
+      "subfield": "strategy",
+      "statistics": {
+        "number_statistics": {
+          "args_numbers": 12
+        },
+        "operator_statistics": {
+          "operators": {
+            "+": 0,
+            "-": 3,
+            "*": 0,
+            "/": 1,
+            "%": 0,
+            "**": 0
+          },
+          "total_operators": 4
+        },
+        "code_statistics": {
+          "lines": 3,
+          "parentheses": 6
+        }
+      },
+      "difficulty": 3.1780538303479453,
+      "images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3062-1.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3062-2.png",
+        "https://acer-minio-api.addicted.ltd/multi-finance/3062-3.png"
+      ],
+      "ground_images": [
+        "https://acer-minio-api.addicted.ltd/multi-finance/3062-2.png"
+      ],
+      "context": "",
+      "grade": "Hard",
+      "language": "Chinese",
+      "system_input": "You are a financial expert, you are supposed to generate a Python program to answer the given question based on the provided image and context. The returned value of the program is supposed to be the answer. Here is an example of the Python program:\n```python\ndef solution():\n    # Define variables name and value\n    revenue = 600000\n    avg_account_receivable = 50000\n    \n    # Do math calculation to get the answer\n    receivables_turnover = revenue / avg_account_receivable\n    answer = 365 / receivables_turnover\n    \n    # return answer\n    return answer\n```\n",
+      "user_input": "Question: 请计算第3.0组2014年到2024年的平均年化超额，并保留两位小数。\n\nPlease generate a Python program to answer the given question based on the provided image and context. The format of the program should be the following:\n```python\ndef solution():\n    # Define variables name and value\n    \n    # Do math calculation to get the answer\n    \n    # return answer\n```\n\nContinue your output:\n```python\ndef solution():\n    # Define variables name and value\n"
+    },
+    "model_raw_response": "{\"id\":\"VAW1eQXzkmbkiJnVHIwO4YpPQh1Z89ONciSGUKmgFFA=\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"logprobs\":null,\"message\":{\"content\":\"```python\\ndef solution():\\n    # Define variables name and value\\n    group_3_0 = [-16.21, 34.32, 6.29, -7.80, 2.84, 6.17, -0.70, 25.04, 15.59, 15.25, 7.89, 7.66]\\n    \\n    # Do math calculation to get the answer\\n    average_yearly_excess = sum(group_3_0) / len(group_3_0)\\n    \\n    # return answer\\n    return round(average_yearly_excess, 2)\\n```\\n\\nThis program calculates the average yearly excess for the 3.0 group from 2014 to 2024, and returns the result rounded to two decimal places. The values used are extracted from the provided image.\",\"refusal\":null,\"role\":\"assistant\",\"audio\":null,\"function_call\":null,\"tool_calls\":null}}],\"created\":1740844959,\"model\":\"internvl2.5-78b\",\"object\":\"chat.completion\",\"service_tier\":null,\"system_fingerprint\":null,\"usage\":null,\"moderation\":{\"sensitive\":false,\"category\":\"\"}}"
+  }
+]
